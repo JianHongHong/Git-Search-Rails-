@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Searchrepos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Title</th>
+      <th>Body</th>
+      <th>Date</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @searchrepos.each do |searchrepo| %>
+      <tr>
+        <td><%= searchrepo.title %></td>
+        <td><%= searchrepo.body %></td>
+        <td><%= searchrepo.date %></td>
+        <td><%= link_to 'Show', searchrepo %></td>
+        <td><%= link_to 'Edit', edit_searchrepo_path(searchrepo) %></td>
+        <td><%= link_to 'Destroy', searchrepo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Searchrepo', new_searchrepo_path %>

@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Title:</strong>
+  <%= @searchrepo.title %>
+</p>
+
+<p>
+  <strong>Body:</strong>
+  <%= @searchrepo.body %>
+</p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @searchrepo.date %>
+</p>
+
+<%= link_to 'Edit', edit_searchrepo_path(@searchrepo) %> |
+<%= link_to 'Back', searchrepos_path %>

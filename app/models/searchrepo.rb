@@ -1,0 +1,2 @@
+class Searchrepo < ApplicationRecord
+end
