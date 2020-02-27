@@ -4,13 +4,19 @@ class SearchreposController < ApplicationController
   # GET /searchrepos
   # GET /searchrepos.json
   def index
-    @searchrepos = Searchrepo.all
+    # @searchrepo = searchrepo.find("Nugit")
+    @searchrepo = Searchrepo.new.find('Nugit')
   end
 
   # GET /searchrepos/1
   # GET /searchrepos/1.json
   def show
   end
+
+  # Searching for repos
+  # def search()
+  
+  # end
 
   # GET /searchrepos/new
   def new

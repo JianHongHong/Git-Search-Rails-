@@ -6,7 +6,11 @@ ruby '2.7.0'
 # Bootstrap
 gem 'bootstrap', '~> 4.0.0'
 
+# Jquery
 gem 'jquery-rails'
+
+# Httparty
+gem 'httparty'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 6.0.2', '>= 6.0.2.1'
