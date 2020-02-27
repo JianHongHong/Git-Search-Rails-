@@ -1,31 +1,46 @@
-<p id="notice"><%= notice %></p>
-
-<h1>Searchrepos</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Body</th>
-      <th>Date</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @searchrepos.each do |searchrepo| %>
-      <tr>
-        <td><%= searchrepo.title %></td>
-        <td><%= searchrepo.body %></td>
-        <td><%= searchrepo.date %></td>
-        <td><%= link_to 'Show', searchrepo %></td>
-        <td><%= link_to 'Edit', edit_searchrepo_path(searchrepo) %></td>
-        <td><%= link_to 'Destroy', searchrepo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
+<section class="head">
+    <div class="container">
+        <h2 class="text-center"><span>GitHub Search</span></h2>
+    </div>
+</section>
 <br>
+<hr>
+<br>
+<div id="searchTab p-2 mb-5">
+    <div class="form-group row">
+      <div class="col-md-3 field-label-responsive">
+        <label for="userType">Input search field</label>
+      </div>
+      <div class="form-group col-md-6">
+        <input class="form-control" type="text" style="width:280px;" placeholder="Input Search" id="SearchInput">
+      </div>
+      <div class="col-md-3">
+        <div id="btnStaff" class="btn btn-flat btn-primary">SELECT</div>
+      </div>
+    </div>
+</div>
+<br>
+<hr>
+<br>
+<div id="dtView" class="pt-4">
+        <table id="tbl" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;">
+                <caption>All Matching Repository</caption>
+              <thead>
+              <tr>
+                <th>Repository</th>
+                <th>Description</th>
+                <th>Date Modified</th>
+              </tr>
+              </thead>
+              <tbody id="records">
 
-<%= link_to 'New Searchrepo', new_searchrepo_path %>
+              </tbody>
+              <tfoot>
+              <tr>
+                <th>Repository</th>
+                <th>Description</th>
+                <th>Date Modified</th>
+              </tr>
+              </tfoot>
+            </table>
+</div>
