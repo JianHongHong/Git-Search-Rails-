@@ -5,7 +5,7 @@ class Searchrepo
     @@url = "https://api.github.com/search/repositories"
 
     def find(name)
-       @results = HTTParty.get(@@url, query: { q: name })
+       @results = HTTParty.get(@@url, query: { q: name }).parsed_response
     end
 
 end
