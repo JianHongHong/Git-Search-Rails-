@@ -15,7 +15,7 @@
         <input class="form-control" type="text" style="width:280px;" placeholder="Input Search" id="SearchInput">
       </div>
       <div class="col-md-3">
-        <div id="btnStaff" class="btn btn-flat btn-primary">SELECT</div>
+        <div id="btnSearch" class="btn btn-flat btn-primary">SELECT</div>
       </div>
     </div>
 </div>
@@ -29,6 +29,7 @@
               <tr>
                 <th>Repository</th>
                 <th>Description</th>
+                <th>Date Updated</th>
               </tr>
               </thead>
               <tbody id="records">
@@ -36,6 +37,7 @@
                   <tr>
                     <td><%= repo['full_name'] %></td>
                     <td><%= repo['description'] %></td>
+                    <td><%= repo['updated_at'] %></td>
                   </tr>
                 <% end %>
               </tbody>
@@ -43,6 +45,7 @@
               <tr>
                 <th>Repository</th>
                 <th>Description</th>
+                <th>Date Updated</th>
               </tr>
               </tfoot>
             </table>

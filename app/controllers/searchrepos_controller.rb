@@ -4,17 +4,13 @@ class SearchreposController < ApplicationController
   # GET /searchrepos
   # GET /searchrepos.json
   def index
-    # @searchrepo = Searchrepo.new.find('Nugit')
+    # if params[:search]
+      @searchrepo = Searchrepo.new.find("Nugit")
+      # respond_to do |format|
+      #   format.js { render partial: 'search-results'}
+      # end
+    # end
   end
 
-
-  # Searching for repos
-  def search()
-    @searchrepo = Searchrepo.new.find("nugit")
-    unless searchrepo
-      flash[:alert] = 'Repository not found'
-      return render action: :index
-    end
-  end
 
 end
