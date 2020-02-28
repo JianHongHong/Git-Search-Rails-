@@ -1,7 +1,6 @@
 
-class Searchrepo
+class Searchrepo < ApplicationRecord
     include HTTParty    
-    debug_output STDOUT
     @@url = "https://api.github.com/search/repositories"
 
     def find(name)

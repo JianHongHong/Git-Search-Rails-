@@ -1,3 +1,4 @@
+<% console %>
 <section class="head">
     <div class="container">
         <h2 class="text-center"><span>GitHub Search</span></h2>
@@ -6,7 +7,7 @@
 <br>
 <hr>
 <br>
-<div id="searchTab p-2 mb-5">
+<%# <div id="searchTab p-2 mb-5">
     <div class="form-group row">
       <div class="col-md-3 field-label-responsive">
         <label for="userType">Input search field</label>
@@ -18,7 +19,11 @@
         <div id="btnSearch" class="btn btn-flat btn-primary">SELECT</div>
       </div>
     </div>
-</div>
+</div> %>
+<%= form_tag(searchrepos_path, method: "get", remote: true) do %>
+  <%= text_field_tag :search, params[:search], placeholder: "Enter search term" %>
+  <%= submit_tag "Search" %>
+<% end %>
 <br>
 <hr>
 <br>
@@ -32,13 +37,15 @@
                 <th>Date Updated</th>
               </tr>
               </thead>
-              <tbody id="records">
+              <% if params[:search] != nil %>
+              <tbody id="search-results">
                 <% @searchrepo['items'].each do |repo| %>
                   <tr>
                     <td><%= repo['full_name'] %></td>
                     <td><%= repo['description'] %></td>
                     <td><%= repo['updated_at'] %></td>
                   </tr>
+                <% end %>
                 <% end %>
               </tbody>
               <tfoot>
