@@ -1,4 +1,9 @@
 <% console %>
+<script>
+function myFunction() {
+  alert("I am an alert box!");
+}
+</script>
 <section class="head">
     <div class="container">
         <h2 class="text-center"><span>GitHub Search</span></h2>
@@ -20,7 +25,7 @@
       </div>
     </div>
 </div> %>
-<%= form_tag(searchrepos_path, method: "get", remote: true) do %>
+<%= form_tag("search", method: "get") do %>
   <%= text_field_tag :search, params[:search], placeholder: "Enter search term" %>
   <%= submit_tag "Search" %>
 <% end %>
@@ -37,7 +42,6 @@
                 <th>Date Updated</th>
               </tr>
               </thead>
-              <% if params[:search] != nil %>
               <tbody id="search-results">
                 <% @searchrepo['items'].each do |repo| %>
                   <tr>
@@ -46,8 +50,10 @@
                     <td><%= repo['updated_at'] %></td>
                   </tr>
                 <% end %>
-                <% end %>
               </tbody>
+              <%# <tbody id="search-results-show">
+              
+              </tbody> %>
               <tfoot>
               <tr>
                 <th>Repository</th>
@@ -57,3 +63,4 @@
               </tfoot>
             </table>
 </div>
+
