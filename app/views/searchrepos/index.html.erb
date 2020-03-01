@@ -1,6 +1,6 @@
-<% console %>
-<script>
-</script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.base.css"/>
+
+
 <section class="head">
     <div class="container">
         <h2 class="text-center"><span>GitHub Search</span></h2>
@@ -23,7 +23,7 @@
     </div>
 </div> %>
 <%= form_tag(searchrepos_path, method: "get", :remote => true) do %>
-  <%= text_field_tag :search, params[:search], placeholder: "Enter search term" %>
+  <%= text_field_tag :search, params[:search], id: "autocomplete", placeholder: "Enter search term" %>
   <%= submit_tag "Search" %>
 <% end %>
 <br>
@@ -53,4 +53,18 @@
       </table>
 
 </div>
+
+
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.js" async></script>
+<script>
+var ajax = new XMLHttpRequest();
+ajax.open("GET", "https://raw.githubusercontent.com/bevacqua/correcthorse/master/wordlist.json", true);
+ajax.onload = function() {
+	var list = JSON.parse(ajax.responseText);
+	new Awesomplete(document.querySelector("#autocomplete"),{ list: list });
+};
+ajax.send();
+</script>
+
 
