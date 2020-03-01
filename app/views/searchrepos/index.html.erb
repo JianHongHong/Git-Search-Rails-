@@ -1,8 +1,5 @@
 <% console %>
 <script>
-function myFunction() {
-  alert("I am an alert box!");
-}
 </script>
 <section class="head">
     <div class="container">
@@ -33,25 +30,27 @@ function myFunction() {
 <hr>
 <br>
 <div id="search-results" class="pt-4">
-        <table id="tbl" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;">
-              <thead>
-              <tr>
-                <th>Repository</th>
-                <th>Description</th>
-                <th>Date Updated</th>
-              </tr>
-              </thead>
-              <tbody>
-              <% if params[:search] %>
-                  <% @searchrepo['items'].each do |repo| %>
-                      <tr>
-                      <td><%= repo['full_name'] %></td>
-                      <td><%= repo['description'] %></td>
-                      <td><%= repo['updated_at'] %></td>
-                      </tr>
-                  <% end %>
-              <% end %>
-              </tbody>
-            </table>
+  <table id="tbl" class="table table-striped table-bordered dt-responsive nowrap" style="width:100%;">
+    <caption>All matching respository</caption>
+        <thead>
+        <tr>
+          <th>Repository</th>
+          <th>Description</th>
+          <th>Date Updated</th>
+        </tr>
+        </thead>
+        <tbody>
+        <% if params[:search] %>
+            <% @searchrepo['items'].each do |repo| %>
+                <tr>
+                <td><%= repo['full_name'] %></td>
+                <td><%= repo['description'] %></td>
+                <td><%= repo['updated_at'] %></td>
+                </tr>
+            <% end %>
+        <% end %>
+        </tbody>
+      </table>
+
 </div>
 
