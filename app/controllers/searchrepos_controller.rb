@@ -5,8 +5,10 @@ class SearchreposController < ApplicationController
   # GET /searchrepos.json
   def index
     if params[:search]
+      # call model to get api using search parameters
       @searchrepo = Searchrepo.new.find(params[:search])
       respond_to do |format|
+        # partial formatting of webpage
         format.js { render partial: 'search-results'}
       end
     end

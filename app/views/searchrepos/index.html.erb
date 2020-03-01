@@ -9,19 +9,6 @@
 <br>
 <hr>
 <br>
-<%# <div id="searchTab p-2 mb-5">
-    <div class="form-group row">
-      <div class="col-md-3 field-label-responsive">
-        <label for="userType">Input search field</label>
-      </div>
-      <div class="form-group col-md-6">
-        <input class="form-control" type="text" style="width:280px;" placeholder="Input Search" id="SearchInput">
-      </div>
-      <div class="col-md-3">
-        <div id="btnSearch" class="btn btn-flat btn-primary">SELECT</div>
-      </div>
-    </div>
-</div> %>
 <%= form_tag(searchrepos_path, method: "get", :remote => true) do %>
   <%= text_field_tag :search, params[:search], id: "autocomplete", placeholder: "Enter search term" %>
   <%= submit_tag "Search" %>
@@ -57,6 +44,7 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/awesomplete/1.1.5/awesomplete.js" async></script>
+<%# Ajax for autocomplete %>
 <script>
 var ajax = new XMLHttpRequest();
 ajax.open("GET", "https://raw.githubusercontent.com/bevacqua/correcthorse/master/wordlist.json", true);
