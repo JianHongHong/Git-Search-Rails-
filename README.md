@@ -1,4 +1,4 @@
-Using the Github search API to implement an autocomplete search box as a Ruby on Rails app for Nugit.
+Using the Github search API to implement an autocomplete search box as a Ruby on Rails app.
 
 The webpage displays a search box with a table of results with the relevant fields of repository name, description, and date updated.
 
